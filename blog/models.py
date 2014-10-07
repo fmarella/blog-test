@@ -15,4 +15,4 @@ class Post(models.Model):
     #reporter = models.ForeignKey(User)
     
     def get_absolute_url(self):
-        return reverse('post-detail', kwargs={'id': self.id})
+        return reverse('post-detail', kwargs={'pk': self.id})

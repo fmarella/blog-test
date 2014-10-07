@@ -1,6 +1,7 @@
 # Create your views here.
-from django.views.generic import CreateView, ListView, DetailView, UpdateView
+from django.views.generic import CreateView, ListView, DetailView, UpdateView, DeleteView
 from django.core.urlresolvers import reverse_lazy
+
 from models import Post
 from forms import PostForm
 
@@ -21,3 +22,7 @@ class PostUpdateView(UpdateView):
     model = Post
     success_url = reverse_lazy('post-list')
     form_class = PostForm
+    
+class PostDeleteView(DeleteView):
+    model = Post
+    success_url = reverse_lazy('post-list')

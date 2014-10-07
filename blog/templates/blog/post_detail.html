@@ -4,4 +4,6 @@
 <p>{{ object.content }}</p>
 <p>Reporter: {{ object.reporter }}</p>
 <p>Published: {{ object.pub_date|date }}</p>
+
+<a class="btn btn-danger" href="{% url 'post-delete' object.pk %}">Delete this post!</a>
 {% endblock %}
