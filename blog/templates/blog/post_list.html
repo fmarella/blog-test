@@ -1,0 +1,18 @@
+{% extends 'blog/base.html' %}
+{% block title %} Posts {% endblock %}
+
+
+{% block content %}
+
+<h1>Posts</h1>
+<ul>
+{% for post in post_list %}
+    <li><a href="{% url 'post-detail' post.pk %}">{{ post.title }} </a> (<a href="{% url 'post-update' post.pk %}">edit</a>)</li>
+{% empty %}
+    <li>No posts yet.</li>
+{% endfor %}
+</ul>
+
+<a class="btn btn-primary" href="{% url 'post-new' %}">Add a new post</a>
+
+{% endblock %}
